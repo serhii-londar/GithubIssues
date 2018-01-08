@@ -1,6 +1,0 @@
-framework module GithubIssues {
-  umbrella header "GithubIssues-umbrella.h"
-
-  export *
-  module * { export * }
-}
