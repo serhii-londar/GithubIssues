@@ -322,10 +322,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GithubIssues_Example/Pods-GithubIssues_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BaseAPI/BaseAPI.framework",
+				"${BUILT_PRODUCTS_DIR}/GithubAPI/GithubAPI.framework",
 				"${BUILT_PRODUCTS_DIR}/GithubIssues/GithubIssues.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BaseAPI.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GithubAPI.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GithubIssues.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

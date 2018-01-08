@@ -2,7 +2,7 @@ use_frameworks!
 
 target 'GithubIssues_Example' do
   pod 'GithubIssues', :path => '../'
-
+  pod 'GithubAPI', :path => '../../GithubAPI'
   target 'GithubIssues_Tests' do
     inherit! :search_paths
 
