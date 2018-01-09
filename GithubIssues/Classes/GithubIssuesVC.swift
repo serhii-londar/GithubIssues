@@ -6,14 +6,16 @@
 //
 
 import UIKit
-//import GithubAPI
+import GithubAPI
 
 public class GithubIssuesVC: UIViewController {
     @IBOutlet weak var titleTextField: UITextField! = nil
     @IBOutlet weak var bodyTextView: UITextView! = nil
     @IBOutlet weak var sendButton: UIButton! = nil
+    var config: GithubIssuesConfig! = nil
+    var completion: ((Bool?, Error?) -> Void)! = nil
     
-    public var storyboardInstanse: GithubIssuesVC {
+    public static var storyboardInstanse: GithubIssuesVC {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle(for: GithubIssuesVC.self))
         let vc = storyboard.instantiateViewController(withIdentifier: "GithubIssuesVC") as! GithubIssuesVC
         return vc
@@ -25,6 +27,18 @@ public class GithubIssuesVC: UIViewController {
     }
     
     @IBAction func sendButtonPressed(_ sender: Any) {
-        
+        if let titleText = self.titleTextField.text {
+            var issue = Issue(title: titleText)
+            issue.body = bodyTextView.text
+            IssuesAPI(authentication: TokenAuthentication(token: config.token)).createIssue(owner: config.owner, repository: config.repository, issue: issue, completion: { (response, error) in
+                if response != nil {
+                    self.dismiss(animated: true, completion: nil)
+                    self.completion(true, nil)
+                } else {
+                    self.dismiss(animated: true, completion: nil)
+                    self.completion(false, error)
+                }
+            })
+        }
     }
 }

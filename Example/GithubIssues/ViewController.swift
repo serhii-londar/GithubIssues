@@ -7,18 +7,18 @@
 //
 
 import UIKit
+import GithubIssues
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func presentButtonPressed(_ sender: Any) {
+        GithubIssuesHelper(config: GithubIssuesConfig(owner: "serhii-londar", repository: "GithubIssues", token: "token")).present(on: self) { (success, error) in
+            
+        }
     }
-
 }
 

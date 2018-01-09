@@ -1,24 +1,22 @@
 PODS:
-  - BaseAPI (0.0.5)
-  - GithubAPI (0.0.1):
+  - BaseAPI (0.1.2)
+  - GithubAPI (0.0.2):
     - BaseAPI
-  - GithubIssues (0.1.0)
+  - GithubIssues (0.1.0):
+    - GithubAPI
 
 DEPENDENCIES:
-  - GithubAPI (from `../../GithubAPI`)
   - GithubIssues (from `../`)
 
 EXTERNAL SOURCES:
-  GithubAPI:
-    :path: ../../GithubAPI
   GithubIssues:
     :path: ../
 
 SPEC CHECKSUMS:
-  BaseAPI: 950f8d87754897e6d706aa040cc8d91d948315e8
-  GithubAPI: 8a991b66dd92bb2b65041c800728e4c72e536dde
-  GithubIssues: cc3303fe718c363709820c2e981418e6f30e18c8
+  BaseAPI: e234e06c832a85154f34f09d6b626364059b1638
+  GithubAPI: 8e1d77341318a4b22a570ac52fc1c7b14550c0aa
+  GithubIssues: cb86f3fe6f00a01db176e6b697ca7474f230e925
 
-PODFILE CHECKSUM: e741e0149a6cd3dd833273b70d3d6b14e9f31fee
+PODFILE CHECKSUM: b4723ff9a2fcff53a42f5cfdb60aed52ffb5a847
 
 COCOAPODS: 1.3.1
